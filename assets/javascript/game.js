@@ -1,5 +1,6 @@
 // my variables
 var letterPicked;
+var computeGuess;
 var userKey;
 //holds all the user guesses
 var guessesSoFar=[];
@@ -7,12 +8,11 @@ var g = 10; //guesses allowed
 var w = 0;// wins 
 var l = 0; // losses
 
-
 //computer randomly pick a letter
 var myLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var computeGuess = Math.floor(Math.random() * myLetters.length);
 var letterPicked = myLetters[computeGuess];
-console.log(letterPicked);
+console.log(letterPicked); 
 // letter check loop 
 document.onkeyup = function (event) {
     var userKey = String.fromCharCode(event.keyCode).toLowerCase();
@@ -21,16 +21,13 @@ document.onkeyup = function (event) {
 if (guessesSoFar.indexOf(userKey)<0 && myLetters.indexOf(userKey)>= 0){
     guessesSoFar[guessesSoFar.length]=userKey;
     g--;
-     
-
   //user doesn't get the letter and its a validn one guess go down
-  
     var gues = document.getElementById("left");
     gues.textContent = "Guesses left: " + g;
     guesses.textContent = "Your guesses: " + guessesSoFar + ' , ';
-    console.log(guessesSoFar);
     
 }
+
 
     //if userkey is same as  letterpicked wins
     if (userKey === letterPicked) {
@@ -38,13 +35,14 @@ if (guessesSoFar.indexOf(userKey)<0 && myLetters.indexOf(userKey)>= 0){
         var win = document.getElementById("wins");
         win.textContent = "Wins:" + w;
         g = 10;
-		guessesSoFar = [];
-        letterPicked = myLetters[Math.floor(Math.random() * myLetters.length)];
-        console.log(letterPicked);
-    }
+        var gues = document.getElementById("left");
+        gues.textContent = "Guesses left: " + g;
+        guessesSoFar = [];
+        var clear = document.getElementById("guesses");
+        clear.textContent = "Your guesses: " + guessesSoFar ;
 
-    
-    
+        console.log(letterPicked); 
+    }
     // if user runs out of guesses losses goes up
     if (g === 0) {
         console.log("you lost");
@@ -55,11 +53,13 @@ if (guessesSoFar.indexOf(userKey)<0 && myLetters.indexOf(userKey)>= 0){
         var gues = document.getElementById("left");
         gues.textContent = "Guesses left: " + g;
         guessesSoFar = [];
-        letterPicked = myLetters[Math.floor(Math.random() * myLetters.length)];
     guesses.textContent = "Your guesses: " + guessesSoFar ;
+  //  var computeGuess = Math.floor(Math.random() * myLetters.length);
+//var letterPicked = myLetters[computeGuess];
+//console.log(letterPicked);
     }
 
-};
+}
 
 // reset function
     var r = document.getElementById("give");
@@ -80,8 +80,9 @@ if (guessesSoFar.indexOf(userKey)<0 && myLetters.indexOf(userKey)>= 0){
         guessesSoFar = [];
         var clear = document.getElementById("guesses");
     clear.textContent = "Your guesses: " + guessesSoFar ;
-        letterPicked = myLetters[Math.floor(Math.random() * myLetters.length)];
-    
-    console.log('hey');
+
+       var computeGuess = Math.floor(Math.random() * myLetters.length);
+var letterPicked = myLetters[computeGuess];
+    console.log(letterPicked);
 };
 //function begin
