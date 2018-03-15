@@ -54,8 +54,6 @@ if (guessesSoFar.indexOf(userKey)<0 && myLetters.indexOf(userKey)>= 0){
         guessesSoFar = [];
     guesses.textContent = "Your guesses: " + guessesSoFar ;
     var computeGuess = Math.floor(Math.random() * myLetters.length);
-//var letterPicked = myLetters[computeGuess];
-//console.log(letterPicked);
     }
 
 }
