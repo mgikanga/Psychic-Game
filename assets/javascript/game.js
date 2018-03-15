@@ -13,7 +13,6 @@ var myLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var computeGuess = Math.floor(Math.random() * myLetters.length);
 var letterPicked = myLetters[computeGuess];
 console.log(letterPicked);
-
 // letter check loop 
 document.onkeyup = function (event) {
     var userKey = String.fromCharCode(event.keyCode).toLowerCase();
@@ -53,10 +52,36 @@ if (guessesSoFar.indexOf(userKey)<0 && myLetters.indexOf(userKey)>= 0){
         var loss = document.getElementById("losses");
         loss.textContent = "Losses: " + l;
         g = 10;
-		guessesSoFar = [];
+        var gues = document.getElementById("left");
+        gues.textContent = "Guesses left: " + g;
+        guessesSoFar = [];
         letterPicked = myLetters[Math.floor(Math.random() * myLetters.length)];
-        console.log(letterPicked);
+    guesses.textContent = "Your guesses: " + guessesSoFar ;
     }
 
-}
+};
 
+// reset function
+    var r = document.getElementById("give");
+    document.onclick = function(event) {
+        // set wins to zero
+        w = 0;
+        var win = document.getElementById("wins");
+        win.textContent = "Wins:" + w;
+         // set losses to zero
+        l=0;
+        var loss = document.getElementById("losses");
+        loss.textContent = "Losses: " + l;
+ // set guesses to ten
+        g = 10;
+        var gues = document.getElementById("left");
+        gues.textContent = "Guesses left: " + g;
+//  set letter guessed back to null
+        guessesSoFar = [];
+        var clear = document.getElementById("guesses");
+    clear.textContent = "Your guesses: " + guessesSoFar ;
+        letterPicked = myLetters[Math.floor(Math.random() * myLetters.length)];
+    
+    console.log('hey');
+};
+//function begin

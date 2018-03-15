@@ -1,5 +1,30 @@
-#top{
-    background-color: blueviolet;
-    color: black;
+body{
+    background-color: grey;
+}
+#header{
+    background-color:#196096;
+    color:#d4c7e7;
     text-align: center;
+    padding: 2%;
+    width: 70%;
+   font-family: 'Berkshire Swash', cursive;
+   margin: 0 0 1% 8%;
+
+}
+p{
+    font-size: 16px;
+    font-family: 'Timmana', sans-serif;
+    color: #196096;
+}
+#main{
+    width: 100%;
+    margin: auto;
+    background-color: #d4c7e7;
+    margin-top: 1%;
+}
+h3{
+    color: #196096;  
+}
+img{
+    margin-bottom: 2%;
 }
