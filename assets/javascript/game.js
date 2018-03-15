@@ -29,7 +29,7 @@ if (guessesSoFar.indexOf(userKey)<0 && myLetters.indexOf(userKey)>= 0){
 }
 
 
-    //if userkey is same as  letterpicked wins
+    //if userkey is same as  letterpicked wins and the game reset guesses left, letterpicked and guessed letters
     if (userKey === letterPicked) {
         w++;
         var win = document.getElementById("wins");
@@ -40,12 +40,11 @@ if (guessesSoFar.indexOf(userKey)<0 && myLetters.indexOf(userKey)>= 0){
         guessesSoFar = [];
         var clear = document.getElementById("guesses");
         clear.textContent = "Your guesses: " + guessesSoFar ;
-
-        console.log(letterPicked); 
+        var computeGuess = Math.floor(Math.random() * myLetters.length);
+        console.log(computeGuess); 
     }
     // if user runs out of guesses losses goes up
     if (g === 0) {
-        console.log("you lost");
         l++;
         var loss = document.getElementById("losses");
         loss.textContent = "Losses: " + l;
@@ -54,7 +53,7 @@ if (guessesSoFar.indexOf(userKey)<0 && myLetters.indexOf(userKey)>= 0){
         gues.textContent = "Guesses left: " + g;
         guessesSoFar = [];
     guesses.textContent = "Your guesses: " + guessesSoFar ;
-  //  var computeGuess = Math.floor(Math.random() * myLetters.length);
+    var computeGuess = Math.floor(Math.random() * myLetters.length);
 //var letterPicked = myLetters[computeGuess];
 //console.log(letterPicked);
     }
