@@ -3,3 +3,4 @@
 Choose a letter from a - z to test your psycic ability to see if you can read the computer's powerfull mind!
 You only get 9 guesses
 The game keeps scores to determine your losses and wins.*
+[The psych game!](https://mgikanga.github.io/Psychic-Game/)
